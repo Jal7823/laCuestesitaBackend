@@ -1,3 +1,3 @@
 from django.contrib import admin
-
-# Register your models here.
+from apps.ingredients.models import Ingredients
+admin.site.register(Ingredients)
