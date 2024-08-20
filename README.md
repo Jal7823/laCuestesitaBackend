@@ -30,34 +30,28 @@ The project is organized into the following applications:
 ## Installation
 
 1. **Clone the Repository**:
-
-   ```bash
-   git clone https://github.com/Jal7823/laCuestesitaBackend
-   cd laCuestesitaBackend
-Create a Virtual Environment:
-
 ```bash
-Copiar código
-python -m venv venv
-Activate the Virtual Environment:
+git clone https://github.com/Jal7823/laCuestesitaBackend
+cd laCuestesitaBackend
 ```
+Create a Virtual Environment:
+```bash
+
+python -m venv venv
+```
+Activate the Virtual Environment:
 
 On Windows:
 
 ```bash
-Copiar código
 venv\Scripts\activate
 ```
 On macOS/Linux:
-```
-bash
-Copiar código
+```bash
 source venv/bin/activate
 ```
 Install Dependencies:
-```
-bash
-Copiar código
+```bash
 pip install -r requirements.txt
 ```
 Configure the Database:
@@ -65,21 +59,17 @@ Configure the Database:
 Ensure your database is set up in settings.py.
 
 Run migrations:
-```
-bash
-Copiar código
+```bash
+
 python manage.py migrate
 ```
 Create a Superuser:
-```
-bash
-Copiar código
+```bash
 python manage.py createsuperuser
 ```
 Run the Development Server:
-```
-bash
-Copiar código
+
+```bash
 python manage.py runserver
 ```
 **Usage**
