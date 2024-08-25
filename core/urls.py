@@ -9,11 +9,11 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api-auth/', include('rest_framework.urls')),
 
-    path('api/ingredients', include('apps.ingredients.api.router')),  # Rutas de Ingredients
-    path('api/drinks', include('apps.drinks.api.router')),       # Rutas de Drinks
-    path('api/categories', include('apps.categories.api.router')),   # Rutas de Categories
-    path('api/plates', include('apps.plates.api.router')),    
-    path('api/users', include('apps.users.api.router')),   # Rutas de Plates
+    path('api/ingredients/', include('apps.ingredients.api.router')),  # Rutas de Ingredients
+    path('api/drinks/', include('apps.drinks.api.router')),       # Rutas de Drinks
+    path('api/categories/', include('apps.categories.api.router')),   # Rutas de Categories
+    path('api/plates/', include('apps.plates.api.router')),    
+    path('api/users/', include('apps.users.api.router')),   # Rutas de Plates
      path('api/schema/', SpectacularAPIView.as_view(), name='schema'),
     # Optional UI:
     path('swagger/', SpectacularSwaggerView.as_view(url_name='schema'), name='swagger-ui'),
