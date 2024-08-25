@@ -10,3 +10,4 @@ class PlatesSerializer(serializers.ModelSerializer):
     class Meta:
         model = Plates
         fields = ['id', 'name', 'price', 'ingredients', 'category', 'image']
+  

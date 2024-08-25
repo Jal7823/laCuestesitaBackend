@@ -1,7 +1,7 @@
 from rest_framework.routers import DefaultRouter
-from apps.plates.api.views import PlatesViewSet
+from .views import PlatesViewSet
 
 router = DefaultRouter()
-router.register(r'plates', PlatesViewSet, basename='plates')
+router.register(r'', PlatesViewSet)
 
 urlpatterns = router.urls

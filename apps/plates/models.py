@@ -8,10 +8,10 @@ class Plates(models.Model):
     price = models.FloatField('Precio',default=0.0)
     ingredients = models.ManyToManyField(Ingredients,related_name='ingredients')
     category = models.ManyToManyField(Categories,related_name='category')
-    image = models.ImageField('Imagen', upload_to='plates')
+    image = models.ImageField('Imagen', upload_to='plates/')
 
     def __str__(self):
-        return {self.name}
+        return self.name
 
     class Meta:
         """Meta definition for Products."""

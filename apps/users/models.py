@@ -48,7 +48,7 @@ class Users(AbstractUser):
     name = models.CharField("Name", max_length=100, unique=True)
     email = models.EmailField("Email", max_length=254, unique=True)
     image = models.ImageField(
-        "Image", upload_to="avatar", null=True, blank=True, default="avatar/default.jpg"
+        "Image", upload_to="avatar/", null=True, blank=True, default="avatar/default.jpg"
     )
     # permisions
     is_staff = models.BooleanField(default=False)

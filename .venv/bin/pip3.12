@@ -1,4 +1,4 @@
-#!/home/jal/Documents/projects/python2024/laCuestecitaBackend/.venv/bin/python
+#!/home/jal/Documents/projects/py/laCuestecitaBackend/.venv/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys
