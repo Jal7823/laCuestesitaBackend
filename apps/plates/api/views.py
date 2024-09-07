@@ -1,6 +1,7 @@
 from rest_framework import viewsets, filters
 from apps.plates.models import Plates
 from apps.plates.api.serializers import PlatesSerializer
+from apps.users.permisionsUsers import IsBoss
 
 class PlatesViewSet(viewsets.ModelViewSet):
     """
@@ -11,6 +12,7 @@ class PlatesViewSet(viewsets.ModelViewSet):
     serializer_class = PlatesSerializer
     filter_backends = [filters.SearchFilter]
     search_fields = ['category__name'] 
+    # permission_classes = [IsBoss]
 
     def get_queryset(self):
         """
