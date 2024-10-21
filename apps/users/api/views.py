@@ -60,7 +60,7 @@ from .serializers import SerializerClients,SerializerEmploye
 class RegisterEmploye(viewsets.ModelViewSet):
     queryset = Users.objects.filter(role='employe')
     serializer_class = SerializerEmploye
-    permission_classes = [IsStaff]
+    # permission_classes = [IsStaff]
 
     def create(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
@@ -125,7 +125,7 @@ class RegisterEmploye(viewsets.ModelViewSet):
 class RegisterClients(viewsets.ModelViewSet):
     queryset = Users.objects.filter(role='clients')
     serializer_class = SerializerClients
-    permission_classes = [IsStaff]
+    # permission_classes = [IsStaff]
 
     def create(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)

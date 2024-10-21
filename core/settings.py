@@ -33,6 +33,7 @@ INSTALLED_THRIDS = [
     "drf_spectacular",
     "corsheaders",
     'rest_framework_simplejwt',
+    'parler',
 ]
 
 INSTALLED_LOCAL = [
@@ -51,6 +52,7 @@ MIDDLEWARE = [
     "django.contrib.sessions.middleware.SessionMiddleware",
     "corsheaders.middleware.CorsMiddleware",
     "django.middleware.common.CommonMiddleware",
+    "django.middleware.locale.LocaleMiddleware", 
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
@@ -113,11 +115,30 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = "en-us"
 
+LANGUAGES = (
+    ('en', 'English'),
+    ('es', 'Spanish'),
+    ('fr', 'French'),  # Corrección de 'fn' a 'fr'
+)
+
+PARLER_LANGUAGES = {
+    None: (
+        {'code': 'en'},
+        {'code': 'es'},
+        {'code': 'fr'},  # Agregado
+    ),
+    'default': {
+        'fallback': 'en',  # idioma por defecto
+        'hide_untranslated': False,
+    },
+}
+
 TIME_ZONE = "UTC"
 
 USE_I18N = True
 
 USE_TZ = True
+
 
 
 # Static files (CSS, JavaScript, Images)
