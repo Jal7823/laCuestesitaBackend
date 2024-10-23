@@ -1,13 +1,12 @@
 from django.db import models
+from parler.models import TranslatableModel, TranslatedFields
 
-class Ingredients(models.Model):
-    name = models.CharField('Nombre', max_length=50)
-    price = models.FloatField('Precio', default=0.0, null=True, blank=True)
+class Ingredients(TranslatableModel):
+    translations = TranslatedFields(
+        name=models.CharField(max_length=200),
+        descriptions=models.TextField(blank=True, null=True)  # Si quieres agregar descripción o más campos
+    )
+    price = models.DecimalField(max_digits=5, decimal_places=2)
 
     def __str__(self):
-        return self.name  # Aquí devolvemos self.name como cadena
-
-    class Meta:
-        """Meta definition for Products."""
-        verbose_name = 'Ingredient'  # Singular para verbose_name
-        verbose_name_plural = 'Ingredients'
+        return self.name

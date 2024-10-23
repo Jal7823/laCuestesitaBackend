@@ -1,13 +1,14 @@
 from django.db import models
+from parler.models import TranslatableModel, TranslatedFields
 
-class Categories(models.Model):
-    name = models.CharField('Nombre', max_length=100)
+class Categories(TranslatableModel):
+    translations = TranslatedFields(
+        name=models.CharField('Nombre', max_length=100)
+    )
 
     def __str__(self):
-        return self.name
+        return self.safe_translation_getter('name', any_language=True)
 
     class Meta:
-        """Meta definition for Products."""
-
         verbose_name = 'Category'
         verbose_name_plural = 'Categories'
