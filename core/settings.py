@@ -125,7 +125,7 @@ PARLER_LANGUAGES = {
     None: (
         {'code': 'en'},
         {'code': 'es'},
-        {'code': 'fr'},  # Agregado
+        {'code': 'fr'},  
     ),
     'default': {
         'fallback': 'en',  # idioma por defecto

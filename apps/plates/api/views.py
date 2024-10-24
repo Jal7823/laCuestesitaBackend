@@ -11,7 +11,7 @@ class PlatesViewSet(viewsets.ModelViewSet):
     queryset = Plates.objects.all()
     serializer_class = PlatesSerializer
     filter_backends = [filters.SearchFilter]
-    search_fields = ['category__name'] 
+    search_fields = ['category__translations__name']  # Cambiado para manejar traducciones
     # permission_classes = [IsBoss]
 
     def get_queryset(self):
@@ -20,7 +20,7 @@ class PlatesViewSet(viewsets.ModelViewSet):
         """
         queryset = super().get_queryset()
         term = self.request.query_params.get('category', None)
-        print(term)
         if term:
-            queryset = queryset.filter(category__name__icontains=term)
+            # Filtrar por el nombre de la categoría en las traducciones
+            queryset = queryset.filter(category__translations__name__icontains=term)
         return queryset
