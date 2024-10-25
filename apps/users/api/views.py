@@ -2,10 +2,12 @@ from rest_framework.response import Response
 from rest_framework import status
 from rest_framework import viewsets
 from drf_spectacular.utils import extend_schema, extend_schema_view
+from rest_framework_simplejwt.views import TokenObtainPairView
+
 
 from ..permisionsUsers import IsStaff, IsBoss, IsEmploye
 from ..models import Users
-from .serializers import SerializerClients,SerializerEmploye
+from .serializers import SerializerClients,SerializerEmploye,CustomTokenObtainPairSerializer
 
 
 @extend_schema_view(
@@ -137,3 +139,6 @@ class RegisterClients(viewsets.ModelViewSet):
             user.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+class CustomTokenObtainPairView(TokenObtainPairView):
+    serializer_class = CustomTokenObtainPairSerializer
