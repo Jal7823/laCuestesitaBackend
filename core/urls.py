@@ -15,6 +15,8 @@ from apps.users.api.views import CustomTokenObtainPairView  # Asegúrate de impo
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("api-auth/", include("rest_framework.urls")),
+    #COMPANY
+    path("api/company/", include("apps.company.api.router")),
     # AUTH
     path("api/token/", CustomTokenObtainPairView.as_view(), name="token_obtain_pair"),  # Usa tu vista personalizada
     path("api/token/refresh/", TokenRefreshView.as_view(), name="token_refresh"),
