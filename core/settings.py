@@ -42,6 +42,7 @@ INSTALLED_LOCAL = [
     "apps.plates",
     "apps.users",
     "apps.categories",
+    "apps.company",
 ]
 
 INSTALLED_APPS = INSTALLED_BASE + INSTALLED_LOCAL + INSTALLED_THRIDS
